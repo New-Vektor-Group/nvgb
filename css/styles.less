@@ -1,0 +1,56 @@
+@xlarge_media: 1200px;
+@large_media: 992px;
+@medium_media: 768px;
+@small_media: 576px;
+
+@xlarge_container: 1140px;
+@large_container: 960px;
+@medium_container: 720px;
+@small_container: 540px;
+
+@offset_padding: 15px;
+
+.container,
+.container-fluid {
+	width: 100%;
+	padding-right: @offset_padding;
+	padding-left: @offset_padding;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -@offset_padding;
+	margin-left: -@offset_padding;
+}
+
+@media print {
+	.container {
+		min-width: @large_media;
+	}
+}
+
+@media (min-width: @small_media) {
+	.container {
+		max-width: @small_container;
+	}
+}
+@media (min-width: @medium_media) {
+	.container {
+		max-width: @medium_container;
+	}
+}
+@media (min-width: @large_media) {
+	.container {
+		max-width: @large_container;
+	}
+}
+@media (min-width: @xlarge_media) {
+  .container {
+    max-width: @xlarge_container;
+  	}
+}
